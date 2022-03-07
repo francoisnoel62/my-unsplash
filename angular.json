@@ -98,6 +98,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/my-unsplash",
+            "netlifyToken": "FkxPmIXrBaLrEBmfnnMBr3aHFXUUop96BvzoaLJ6X9E",
+            "siteId": "51873c72-bb9b-402b-812d-ef5d3464e6d3"
+          }
         }
       }
     }
