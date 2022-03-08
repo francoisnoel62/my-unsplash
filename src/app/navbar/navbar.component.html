@@ -2,12 +2,12 @@
   <div class="left">
     <img src="assets/my_unsplash_logo.svg" alt="my_unsplash_logo.svg" class="logo">
     <form class="searchbar">
-      <mat-form-field appearance="standard">
+      <mat-form-field appearance="outline">
         <mat-icon matPrefix>search</mat-icon>
-        <input matInput value="Search by label">
+        <input matInput placeholder="Search by name">
       </mat-form-field>
     </form>
   </div>
 
-  <button class="add-photo--btn">Add a photo</button>
+  <button class="add-photo--btn" (click)="addNewPhoto()">Add a photo</button>
 </div>

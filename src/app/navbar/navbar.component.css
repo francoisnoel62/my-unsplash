@@ -9,7 +9,6 @@
 .left {
   display: flex;
   flex-grow: 1;
-  align-content: baseline;
 }
 
 .logo {
@@ -50,14 +49,10 @@
   border-radius: 12px;
 }
 
-::ng-deep .mat-form-field-appearance-standard .mat-form-field-flex {
-  padding-top: unset !important;
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: unset !important;
 }
 
-::ng-deep .mat-form-field-appearance-standard .mat-form-field-underline {
-  height: unset !important;
-}
-
-::ng-deep .mat-form-field-appearance-standard .mat-form-field-underline {
-  height: unset !important;
-}
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #BDBDBD !important;
+  }
