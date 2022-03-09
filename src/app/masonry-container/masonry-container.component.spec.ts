@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MasonryLayoutComponent } from './masonry-layout.component';
+import { MasonryContainerComponent } from './masonry-container.component';
 
-describe('MasonryLayoutComponent', () => {
-  let component: MasonryLayoutComponent;
-  let fixture: ComponentFixture<MasonryLayoutComponent>;
+describe('MasonryContainerComponent', () => {
+  let component: MasonryContainerComponent;
+  let fixture: ComponentFixture<MasonryContainerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MasonryLayoutComponent ]
+      declarations: [ MasonryContainerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MasonryLayoutComponent);
+    fixture = TestBed.createComponent(MasonryContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

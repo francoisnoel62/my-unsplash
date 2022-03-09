@@ -1,0 +1,6 @@
+<ngx-masonry [options]="myOptions">
+  <div class="grid-sizer"></div>
+  <div ngxMasonryItem *ngFor="let photo of photos | async" class="pic--container">
+    <img src="{{photo.photo_url}}" alt="{{photo.label}}">
+  </div>
+</ngx-masonry>

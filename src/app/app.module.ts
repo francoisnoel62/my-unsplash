@@ -14,8 +14,14 @@ import {MatDialogModule} from "@angular/material/dialog";
 
 import { AddNewPhotoComponent } from './add-new-photo/add-new-photo.component';
 
-import { NgxMasonryModule } from 'ngx-masonry';
-import { MasonryLayoutComponent } from './masonry-layout/masonry-layout.component';
+import {NgxMasonryModule} from "ngx-masonry";
+import { MasonryContainerComponent } from './masonry-container/masonry-container.component';
+
+import { environment } from '../environments/environment';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule} from "@angular/fire/compat/storage";
 
 
 @NgModule({
@@ -23,7 +29,7 @@ import { MasonryLayoutComponent } from './masonry-layout/masonry-layout.componen
     AppComponent,
     NavbarComponent,
     AddNewPhotoComponent,
-    MasonryLayoutComponent
+    MasonryContainerComponent
   ],
   entryComponents: [AddNewPhotoComponent],
   imports: [
@@ -35,7 +41,10 @@ import { MasonryLayoutComponent } from './masonry-layout/masonry-layout.componen
       MatIconModule,
       FormsModule,
       MatDialogModule,
-      NgxMasonryModule
+      NgxMasonryModule,
+      AngularFireModule.initializeApp(environment.firebase),
+      AngularFireStorageModule,
+      AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

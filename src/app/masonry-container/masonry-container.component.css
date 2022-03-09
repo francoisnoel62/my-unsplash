@@ -1,0 +1,15 @@
+ngx-masonry {
+  margin-top: 50px;
+}
+
+
+img {
+  border-radius: 16px;
+  width: 100%;
+}
+
+/* fluid 5 columns */
+.grid-sizer, .pic--container {
+  width: 32.5%;
+  margin-bottom: 20px;
+}
