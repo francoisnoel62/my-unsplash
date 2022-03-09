@@ -13,7 +13,6 @@ export class NavbarComponent {
 
   constructor(public dialog: MatDialog) { }
 
-
   addNewPhoto(): void {
     let dialogRef = this.dialog.open(AddNewPhotoComponent, {
       width: '30%',

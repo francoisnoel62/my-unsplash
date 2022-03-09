@@ -1,10 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-
-export interface NewPhoto {
-  label: string;
-  photo_url: string;
-}
+import { NewPhoto } from "../interfaces/newPhoto";
 
 @Component({
   selector: 'app-add-new-photo',
@@ -21,5 +17,7 @@ export class AddNewPhotoComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+
 
 }

@@ -11,13 +11,19 @@ import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {FormsModule} from "@angular/forms";
 import {MatDialogModule} from "@angular/material/dialog";
+
 import { AddNewPhotoComponent } from './add-new-photo/add-new-photo.component';
+
+import { NgxMasonryModule } from 'ngx-masonry';
+import { MasonryLayoutComponent } from './masonry-layout/masonry-layout.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    AddNewPhotoComponent
+    AddNewPhotoComponent,
+    MasonryLayoutComponent
   ],
   entryComponents: [AddNewPhotoComponent],
   imports: [
@@ -28,7 +34,8 @@ import { AddNewPhotoComponent } from './add-new-photo/add-new-photo.component';
       MatInputModule,
       MatIconModule,
       FormsModule,
-      MatDialogModule
+      MatDialogModule,
+      NgxMasonryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
