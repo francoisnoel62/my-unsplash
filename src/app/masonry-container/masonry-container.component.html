@@ -1,6 +1,10 @@
 <ngx-masonry [options]="myOptions">
   <div class="grid-sizer"></div>
-  <div ngxMasonryItem *ngFor="let photo of photos | async" class="pic--container">
+  <div ngxMasonryItem *ngFor="let photo of photos" class="pic--container">
     <img src="{{photo.photo_url}}" alt="{{photo.label}}">
+    <div class="hover--content">
+      <button class="delete--img" (click)="deleteThisPhoto(photo.id)">delete</button>
+      <p class="label">{{photo.label}}</p>
+    </div>
   </div>
 </ngx-masonry>

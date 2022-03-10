@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {NewPhoto} from "../interfaces/newPhoto";
-import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from "@angular/fire/compat/firestore";
-import {Observable} from "rxjs";
+import { Component, OnInit} from '@angular/core';
 import { NgxMasonryOptions } from 'ngx-masonry';
+import { PhotosService } from "../photos.service";
+import {NewPhoto} from "../interfaces/newPhoto";
 
 
 @Component({
@@ -12,21 +11,29 @@ import { NgxMasonryOptions } from 'ngx-masonry';
 })
 export class MasonryContainerComponent implements OnInit {
   public myOptions: NgxMasonryOptions = {
-    gutter: 20,
+    gutter: 15,
     columnWidth: ".grid-sizer",
     itemSelector: ".pic--container",
     percentPosition: true,
   };
 
-  private photosCollection: AngularFirestoreCollection<NewPhoto>;
-  photos: Observable<NewPhoto[]>;
+  photos: NewPhoto[] | undefined;
 
-  constructor(private afs: AngularFirestore) {
-    this.photosCollection = afs.collection<NewPhoto>('photos');
-    this.photos = this.photosCollection.valueChanges();
+  constructor(private photoService: PhotosService) {}
+
+  getPhotos(): void {
+    this.photoService.getPhotos().subscribe(
+      photos => this.photos = photos
+    );
   }
 
   ngOnInit(): void {
+    this.getPhotos();
   }
 
+  deleteThisPhoto(photoId: string) {
+    this.photoService.deleteThisPhoto(photoId)
+      .then(
+        r => console.log(r));
+  }
 }
