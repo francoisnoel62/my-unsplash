@@ -1,20 +1,25 @@
 <h2 mat-dialog-title>Add a new photo</h2>
 <mat-dialog-content>
   <div class="label">
-    <mat-form-field appearance="standard">
-      <input matInput [(ngModel)]="data.label" placeholder="Label">
+    <mat-form-field appearance="standard" class="test">
+      <mat-label>Label</mat-label>
+      <input matInput placeholder="placeholder" [(ngModel)]="label">
     </mat-form-field>
   </div>
-  <div class="photo-url">
-    <mat-form-field appearance="standard">
-      <input matInput [(ngModel)]="data.photo_url" placeholder="photo URL">
-    </mat-form-field>
+  <div class="select-img">
+    <input type="file" class="file-input" accept="image/*"
+           (change)="onFileSelected($event)" #fileUpload>
+    <button mat-raised-button
+            (click)="fileUpload.click()"
+            class="select--photo"
+            [disabled]="selectedFile != undefined">Select a photo</button>
+    <p *ngIf="selectedFile">You have selected {{selectedFile.name}}</p>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions>
   <div class="mat-dialog-close">
     <button mat-button (click)="onNoClick()">Cancel</button>
-    <button [mat-dialog-close]="data">Submit</button>
+    <button mat-button (click)="onSubmit()">Submit</button>
   </div>
 </mat-dialog-actions>
 

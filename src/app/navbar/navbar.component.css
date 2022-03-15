@@ -49,7 +49,7 @@
   border-radius: 12px;
 }
 
-::ng-deep .mat-form-field-wrapper {
+::ng-deep .searchbar .mat-form-field-wrapper {
   padding-bottom: unset !important;
 }
 

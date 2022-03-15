@@ -1,7 +1,8 @@
-import { Component, OnInit} from '@angular/core';
+import { Component} from '@angular/core';
 import { NgxMasonryOptions } from 'ngx-masonry';
 import { PhotosService } from "../photos.service";
 import {NewPhoto} from "../interfaces/newPhoto";
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -9,7 +10,7 @@ import {NewPhoto} from "../interfaces/newPhoto";
   templateUrl: './masonry-container.component.html',
   styleUrls: ['./masonry-container.component.css']
 })
-export class MasonryContainerComponent implements OnInit {
+export class MasonryContainerComponent {
   public myOptions: NgxMasonryOptions = {
     gutter: 15,
     columnWidth: ".grid-sizer",
@@ -17,23 +18,14 @@ export class MasonryContainerComponent implements OnInit {
     percentPosition: true,
   };
 
-  photos: NewPhoto[] | undefined;
+  photos: Observable<NewPhoto[]> | undefined
 
-  constructor(private photoService: PhotosService) {}
-
-  getPhotos(): void {
-    this.photoService.getPhotos().subscribe(
-      photos => this.photos = photos
-    );
-  }
-
-  ngOnInit(): void {
-    this.getPhotos();
+  constructor(private photoService: PhotosService) {
+    this.photos = this.photoService.getPhotos()
   }
 
   deleteThisPhoto(photoId: string) {
     this.photoService.deleteThisPhoto(photoId)
-      .then(
-        r => console.log(r));
+      .then(r => console.log(r));
   }
 }

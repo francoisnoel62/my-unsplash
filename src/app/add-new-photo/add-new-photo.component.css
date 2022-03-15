@@ -1,0 +1,19 @@
+.mat-form-field-wrapper {
+  padding-bottom: 1.34375em !important;
+}
+
+mat-dialog-actions.mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+.file-input {
+  display: none;
+}
+
+.select--photo {
+  margin: 10px;
+}
+
+.selected--photo {
+  display: none;
+}
