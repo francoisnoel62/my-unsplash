@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-unsplash';
+  indexValue: string | undefined;
+
+  setValue(index: string) {
+    this.indexValue = index;
+  }
 }

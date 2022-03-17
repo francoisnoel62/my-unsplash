@@ -1,4 +1,4 @@
 <div class="main--container">
-  <app-navbar></app-navbar>
-  <app-masonry-container></app-masonry-container>
+  <app-navbar (indexEmitter)="setValue($event)"></app-navbar>
+  <app-masonry-container [index]="indexValue"></app-masonry-container>
 </div>

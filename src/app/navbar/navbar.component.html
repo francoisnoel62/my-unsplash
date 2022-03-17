@@ -4,10 +4,9 @@
     <form class="searchbar">
       <mat-form-field appearance="outline">
         <mat-icon matPrefix>search</mat-icon>
-        <input matInput placeholder="Search by name">
+        <input matInput placeholder="Search by name" #search (keyup)="getValue(search.value)">
       </mat-form-field>
     </form>
   </div>
-
   <button class="add-photo--btn" (click)="addNewPhoto()">Add a photo</button>
 </div>

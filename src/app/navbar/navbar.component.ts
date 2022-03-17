@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {Component, EventEmitter, Output} from '@angular/core';
+import { MatDialog} from "@angular/material/dialog";
 import {AddNewPhotoComponent} from "../add-new-photo/add-new-photo.component";
+import {PhotosService} from "../photos.service";
 
 @Component({
   selector: 'app-navbar',
@@ -8,19 +9,17 @@ import {AddNewPhotoComponent} from "../add-new-photo/add-new-photo.component";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  label: string | undefined;
-  photo_url: string | undefined;
+  @Output() indexEmitter = new EventEmitter<string>();
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private photoServ: PhotosService) { }
 
   addNewPhoto(): void {
     let dialogRef = this.dialog.open(AddNewPhotoComponent, {
-      width: '30%',
-      data: {label : this.label, photo_url: this.photo_url}
+      width: '30%'
     });
+  }
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-      });
+  getValue(value: string) {
+    this.indexEmitter.emit(value);
   }
 }
