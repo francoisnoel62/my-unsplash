@@ -22,6 +22,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 
 @NgModule({
@@ -32,20 +33,21 @@ import { AngularFireStorageModule} from "@angular/fire/compat/storage";
     MasonryContainerComponent
   ],
   entryComponents: [AddNewPhotoComponent],
-  imports: [
-      BrowserModule,
-      BrowserAnimationsModule,
-      MatFormFieldModule,
-      MatButtonModule,
-      MatInputModule,
-      MatIconModule,
-      FormsModule,
-      MatDialogModule,
-      NgxMasonryModule,
-      AngularFireModule.initializeApp(environment.firebase),
-      AngularFireStorageModule,
-      AngularFirestoreModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatInputModule,
+        MatIconModule,
+        FormsModule,
+        MatDialogModule,
+        NgxMasonryModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireStorageModule,
+        AngularFirestoreModule,
+        MatTooltipModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

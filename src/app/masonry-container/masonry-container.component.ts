@@ -33,8 +33,7 @@ export class MasonryContainerComponent implements OnInit, OnChanges {
     }
 
   deleteThisPhoto(photoId: string) {
-    this.photoService.deleteThisPhoto(photoId)
-      .then(r => console.log(r));
+    // this.photoService.deleteThisPhoto(photoId);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

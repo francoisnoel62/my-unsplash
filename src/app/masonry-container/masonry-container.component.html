@@ -14,7 +14,7 @@
   <div ngxMasonryItem *ngFor="let photo of selectedPhotos | async" class="pic--container">
     <img src="{{photo.photo_url}}" alt="{{photo.label}}">
     <div class="hover--content">
-      <button class="delete--img" (click)="deleteThisPhoto(photo.id)">delete</button>
+      <button matTooltip="You cannot delete images during demo time!" class="delete--img" (click)="deleteThisPhoto(photo.id)">delete</button>
       <p class="label">{{photo.label}}</p>
     </div>
   </div>
